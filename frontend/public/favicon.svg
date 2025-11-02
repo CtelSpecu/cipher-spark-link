@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="warmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e07b39;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4a355;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#1a1510"/>
+  <!-- Hand outline -->
+  <path d="M50 20 C40 20 35 30 35 40 L35 55 C35 60 30 65 30 70 C30 80 40 85 50 85 C60 85 70 80 70 70 C70 65 65 60 65 55 L65 40 C65 30 60 20 50 20" 
+        fill="none" stroke="url(#warmGradient)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Heart in center -->
+  <path d="M50 45 C45 40 38 42 38 48 C38 55 50 65 50 65 C50 65 62 55 62 48 C62 42 55 40 50 45" 
+        fill="#e07b39"/>
+  <!-- Lock on heart -->
+  <rect x="46" y="52" width="8" height="6" rx="1" fill="#1a1510"/>
+  <path d="M48 52 L48 50 C48 48 52 48 52 50 L52 52" fill="none" stroke="#1a1510" stroke-width="1.5"/>
+</svg>
+

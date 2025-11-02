@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 25 30% 8%;
+    --foreground: 35 100% 95%;
+
+    --card: 25 28% 11%;
+    --card-foreground: 35 100% 95%;
+
+    --popover: 25 28% 11%;
+    --popover-foreground: 35 100% 95%;
+
+    --primary: 30 85% 55%;
+    --primary-foreground: 25 30% 8%;
+
+    --secondary: 20 75% 50%;
+    --secondary-foreground: 35 100% 95%;
+
+    --muted: 25 20% 18%;
+    --muted-foreground: 35 20% 70%;
+
+    --accent: 10 80% 60%;
+    --accent-foreground: 35 100% 95%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 35 100% 95%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 30 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Warm compassion theme tokens */
+    --warm-glow: 30 85% 55%;
+    --warm-pulse: 10 80% 60%;
+    --gradient-start: 25 80% 50%;
+    --gradient-end: 40 75% 55%;
+    
+    /* Effects */
+    --shadow-glow: 0 0 30px hsl(var(--warm-glow) / 0.4);
+    --shadow-pulse: 0 0 20px hsl(var(--warm-pulse) / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .warm-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .warm-pulse {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+  }
+  
+  .gradient-card {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--accent) / 0.15));
+    backdrop-filter: blur(10px);
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--warm-glow) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--warm-glow) / 0.9);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
